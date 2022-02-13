@@ -6,13 +6,12 @@ and soon you will be able to look at them,
 and also ask them to solve some equation
 do not judge strictly (^-^)
 ''')
-choice = int(input('Choose from 1 to 8: '))
-
-while choice <= 0 or choice >= 9:
-    print('ERROR!!! Enter the correct value!!')
-    choice = int(input('Choose from 1 to 8: '))
 
 def calculate(choice):
+    while choice <= 0 or choice >= 9:
+        print('ERROR!!! Enter the correct value!!')
+        choice = int(input('Choose from 1 to 8: '))
+        
     if choice == 1:
         print('Well done! You chose addition \nlets do it!')
         a, b = map(int, input('a, b = ').split())
@@ -61,7 +60,7 @@ def calculate(choice):
         a8 = int(input('a8 = '))
         print('sqrt = ', end='')
         return math.sqrt(a8)
-print(calculate(choice))
+print(calculate(choice = int(input('Choose from 1 to 8: '))))
 
 ChoiceNumber = []
 for i in range(3):
