@@ -7,14 +7,13 @@ and also ask them to solve some equation
 do not judge strictly (^-^)
 ''')
 def calculate(choice):
-    while choice.isalpha():
-        if choice.isalpha():
-            try:
-                print('Dont write words, pls write only numbers')
-                choice = int(input('Choose from 1 to 8: '))
-                choice = int(choice)
-            except:
-                print('Dont write words, pls write only numbers')
+    if choice.isalpha():
+        try:
+            print('Dont write words, pls write only numbers')
+            choice = int(input('Choose from 1 to 8: '))
+            choice = int(choice)
+        except:
+            print('Dont write words, pls write only numbers')
     choice = int(choice)
     while choice <= 0 or choice >= 9:
         print('ERROR!!! Enter the correct value!!')
