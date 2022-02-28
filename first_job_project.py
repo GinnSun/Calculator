@@ -6,61 +6,73 @@ and soon you will be able to look at them,
 and also ask them to solve some equation
 do not judge strictly (^-^)
 ''')
-
 def calculate(choice):
+    while choice.isalpha():
+        if choice.isalpha():
+            try:
+                print('Dont write words, pls write only numbers')
+                choice = int(input('Choose from 1 to 8: '))
+                choice = int(choice)
+            except:
+                print('Dont write words, pls write only numbers')
+    choice = int(choice)
     while choice <= 0 or choice >= 9:
         print('ERROR!!! Enter the correct value!!')
         choice = int(input('Choose from 1 to 8: '))
-        
     if choice == 1:
         print('Well done! You chose addition \nlets do it!')
-        a, b = map(int, input('a, b = ').split())
-        print('a+b =', end='')
+        a = int(input('a='))
+        b = int(input(' b = '))
+        print('a+b = ', end='')
         return a+b
     elif choice == 2:
         print('there will be subtraction')
-        a2, b2 = map(int, input('a2, b2 = ').split())
-        print('a2-b2 =', end='')
+        a2 = int(input('a2 = '))
+        b2 = int(input('b2 = '))
+        print('a2-b2 = ', end='')
         return a2 - b2
     elif choice == 3:
         print('its *')
-        a3, b3 = map(float, input('a3, b3 = ').split())
-        print('a3*b3 =', end='')
+        a3 = int(input('a3 = '))
+        b3 = int(input('b3 = '))
+        print('a3*b3 = ', end='')
         return a3 * b3
     elif choice == 4:
         print('its / ')
-        a4, b4 = map(float, input('a4, b4 = ').split())
-        print('a4/b4 =', end='')
+        a4 = float(input('a4 = '))
+        b4 = float(input('b4 = '))
+        print('a4/b4 = ', end='')
         return a4 / b4
     elif choice == 5:
         print('its division by remainde ')
-        a5, b5 = map(float, input('a5, b5 = ').split())
+        a5 = float(input('a5 = '))
+        b5 = float(input('b5 = '))
         if b5 >= 10:
-            print('a5%b5 =', end='')
+            print('a5%b5 = ', end='')
             return a5 % b5
         elif a5 >= 10:
-            print('b5%a5 =', end='')
+            print('b5%a5 = ', end='')
             return b5 % a5
         else:
-            print('a5%b5 =', end='')
+            print('a5%b5 = ', end='')
             return a5 % b5
     elif choice == 6:
         print('finding the factorial of a number')
         a6 = int(input('a6 = '))
-        print('a6 = ', end='')
+        print('a6 = ', end=' ')
         return math.factorial(a6)
     elif choice == 7:
         print('exponentiation')
-        exponentiation = int(input('exponentiation'))
+        exponentiation = int(input('exponentiation = '))
         a7 = int(input('a7 = '))
-        print(a7, '^', exponentiation, '=', end='')
+        print(a7, '^', exponentiation, '= ', end='')
         return pow(a7, exponentiation)
     elif choice == 8:
         print('Square root')
         a8 = int(input('a8 = '))
         print('sqrt = ', end='')
         return math.sqrt(a8)
-print(calculate(choice = int(input('Choose from 1 to 8: '))))
+print(calculate(choice = input('Choose from 1 to 8: ')))
 
 ChoiceNumber = []
 for i in range(3):
@@ -82,5 +94,6 @@ def sqrt():
             print('b = sqrt(с^2 - a^2) = ',end='')
             return math.sqrt(c1 ** 2 - a1 ** 2)
 print(sqrt())
+
 
 input('Press ENTER to exit')
